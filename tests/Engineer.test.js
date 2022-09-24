@@ -1,6 +1,6 @@
 const Engineer = require('../lib/Engineer');
 
-const obj = new Employee("Lorena Morales",2,"lorenarm.999@gmail.com","lorena-RM")
+const obj = new Engineer("Lorena Morales",2,"lorenarm.999@gmail.com","lorena-RM")
 
 describe ("Engineer", () => {
     describe ("getGithub", () => {
