@@ -97,5 +97,35 @@ function engineerQuestions () {
     })
 }
 
+function internQuestions () {
+    inquirer
+      .prompt([
+        {
+          type: "input",
+          name: "name",
+          message: "What is the Intern's name?",
+        },
+        {
+          type: "input",
+          name: "id",
+          message: "What is the Intern's Id?"
+        },
+        {
+          type: "input",
+          name: "email",
+          message: "What is the Intern's email?"
+        },
+        {
+          type: "input",
+          name: "school",
+          message: "what is the Intern's school?"
+        },
+      ])
+      .then(({ name, id, email, school }) => {
+          teamArray.push(new Intern(name, id, email, school));
+          console.log(`${name} added to Team!`)
+          newTeamMember();
+      })
+  }
 
 firstQuestion();
