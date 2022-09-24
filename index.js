@@ -56,6 +56,7 @@ function newTeamMember () {
     ])
     .then(({employeeType}) => {
       if (employeeType === "I don't want to add anymore team members") {
+        console.log("Your Team has been made! ✓")
         process.exit();
       } else if (employeeType === "Engineer") {
         engineerQuestions();
@@ -63,6 +64,37 @@ function newTeamMember () {
         internQuestions();
       }
     });
+}
+
+function engineerQuestions () {
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "name",
+        message: "What is the Engineer's name?",
+      },
+      {
+        type: "input",
+        name: "id",
+        message: "What is the Engineer's Id?"
+      },
+      {
+        type: "input",
+        name: "email",
+        message: "What is the Engineer's email?"
+      },
+      {
+        type: "input",
+        name: "githubUsername",
+        message: "what is the Engineer's GitHub username?"
+      },
+    ])
+    .then(({ name, id, email, githubUsername }) => {
+        teamArray.push(new Engineer(name, id, email, githubUsername));
+        console.log(`${name} added to Team!`)
+        newTeamMember();
+    })
 }
 
 
