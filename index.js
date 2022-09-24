@@ -40,9 +40,30 @@ function firstQuestion() {
         teamArray.push(new Manager(name, id, email, officeNumber));
         console.log("    ");
         console.log(`${name} added to Team!`);
-        console.log(teamArray);
         newTeamMember();
     });
 }
+
+function newTeamMember () {
+  inquirer
+    .prompt([
+      {
+        type: "list",
+        name: "employeeType",
+        message: "which Employee would you like to add?",
+        choices: ["Engineer", "Intern", "I don't want to add anymore team members"],
+      },
+    ])
+    .then(({employeeType}) => {
+      if (employeeType === "I don't want to add anymore team members") {
+        process.exit();
+      } else if (employeeType === "Engineer") {
+        engineerQuestions();
+      }else if (employeeType === "Intern") {
+        internQuestions();
+      }
+    });
+}
+
 
 firstQuestion();
