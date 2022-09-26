@@ -1,0 +1,33 @@
+.jumbotron{
+    background-color: rgb(225, 70, 70);
+    border-radius:0rem;
+}
+
+header{
+    text-align: center;
+    font-size: 25px;
+    color: white;
+}
+
+.cards{
+    display: flex;
+    justify-content: center;
+}
+
+.card{
+    margin: 10px;
+    box-shadow: 5px 5px 10px rgb(90, 88, 88);
+}
+
+.card-title{
+    font-size: 20px;
+}
+
+.card-body{
+    background-color: rgba(0, 132, 255, 0.841);
+    color: white;
+}
+
+.list-group{
+    margin: 15px;
+}
