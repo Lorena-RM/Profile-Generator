@@ -4,13 +4,13 @@ const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
 const fs = require("fs");
 const path = require("path");
+const generatefile = require("./src/template")
 
 const teamArray = [];
 
 function firstQuestion() {
     console.log("    ");
     console.log("Welcome to the Team Generator!");
-    console.log("use `npm run reset` to reset the dist/folder");
     console.log("    ");
     console.log("Please build your Team 🚻")
   inquirer
@@ -56,7 +56,9 @@ function newTeamMember () {
     ])
     .then(({employeeType}) => {
       if (employeeType === "I don't want to add anymore team members") {
-        console.log("Your Team has been made! ✓")
+        console.log("Your Team has been made! ✓");
+        console.log(teamArray)
+        buildTeam ();
         process.exit();
       } else if (employeeType === "Engineer") {
         engineerQuestions();
@@ -126,6 +128,13 @@ function internQuestions () {
           console.log(`${name} added to Team!`)
           newTeamMember();
       })
-  }
+}
+
+function buildTeam () {
+  fs.writeFileSync (
+    path.join(path.resolve(__dirname,"dist"), "team.html"),
+    generatefile(teamArray),"utf-8"
+  )
+}
 
 firstQuestion();
