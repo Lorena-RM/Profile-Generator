@@ -55,6 +55,14 @@ This **team.html** is included when this project is cloned into your system. onc
 
 ![screenshot example](./images/Screen%20Shot%202022-09-26%20at%206.28.19%20PM.png)
 
+### test.js
+
+Jest was also used for testing code and incorporating TDD 
+
+**Below is a brief walkthrough of passing tests when running `npm test` in your command line**
+
+![gif example](./images/testing.gif)
+
 ## [Questions](#table-of-contents)
 
 Take a look at some other work ive done on my repos from my Github:
