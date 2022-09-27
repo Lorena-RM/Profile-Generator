@@ -29,8 +29,14 @@ $ npm install
 on the terminal corresponding to folder the repo was copied into.
 once this has been completed read the the Usage section for more intructions and information.
 
+![team GIF][gif]
+
+[gif]: ./images/firstexample.gif "Screen Recording of website"
+
 ## [Usage](#table-of-contents)
 This Team Builder generator is a simple apptlication that allows for a successful creation of team html without the stress the comes with creating one. this video below demontrates the usage for this application.
+
+![gif example](./images/example.gif)
 
 ---
 
